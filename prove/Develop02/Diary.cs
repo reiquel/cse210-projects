@@ -23,7 +23,7 @@ public class Diary
     
     public void SaveFile()
     {
-        Console.WriteLine("What would you like to name this file? ");
+        Console.WriteLine("What is the file name? ");
         _fileName = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(_fileName))
         {

@@ -7,7 +7,6 @@ class Program
     {
        
         Diary currentDiary = new Diary();
-        string start = "y";
 
      
         Questionnaire questionnaireForUser = new Questionnaire();
@@ -18,19 +17,15 @@ class Program
         questionnaireForUser._questionnaire.Add(questionnaireForUser._questionnaire5);
 
     
-
+        Console.WriteLine("Welcome to your Diary Program!");
         Console.WriteLine();
-        Console.WriteLine("Welcome to your Personal Diary!");
-        Console.Write("Would you like to continue to the main menu? Y/N: ");
-        Console.ReadLine();
-
-        if (start == "y")
-        {
+   
             int userSelection = 0;
 
             while (userSelection != 5)
             {
-                Console.WriteLine("Please select of one of the following choices: ");
+                Console.WriteLine("What would you like to do? ");
+                Console.WriteLine();
                 Console.WriteLine("1. Write");
                 Console.WriteLine("2. Display");
                 Console.WriteLine("3. Load");
@@ -64,7 +59,7 @@ class Program
                 else if (userSelection == 3)
                 {
                     currentDiary = new Diary();
-                    Console.Write("Which file would you like the open? ");
+                    Console.Write("What is the name of the file you want to open? ");
                     currentDiary._fileName = Console.ReadLine();
                     currentDiary.LoadFile();
                 }
@@ -72,17 +67,12 @@ class Program
                 else if (userSelection == 4)
                 {
                     currentDiary.SaveFile();
-                    Console.WriteLine("The file has been saved");
+                    Console.WriteLine("File saved!");
                 }
             }
         }
 
-        else
-        {
-            Console.WriteLine("See you again sometime");
-            System.Environment.Exit(1);
-        }
 
 
-    }
+    
 }
