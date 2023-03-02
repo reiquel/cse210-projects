@@ -23,6 +23,7 @@ using System.Collections.Generic;
             {
                 break;
             }
+            
             else
             {
                 scripture.Text = ScriptureHider.HideWords(scripture);
