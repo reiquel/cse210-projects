@@ -9,7 +9,7 @@ public class Diary
 
    
     public List<Input> _entries = new List<Input>();
-
+// Good job
 
     public void DisplayDiary()
     {   
