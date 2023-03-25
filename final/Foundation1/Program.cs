@@ -1,37 +1,47 @@
 using System;
+using System.Collections.Generic;
 
-class Journal
+class Program
 {
     static void Main(string[] args)
-   {
-        diary.PrintHomeScreen();
-        Console.WriteLine();
-        Console.WriteLine("Please select one of the following choices:");
-        Console.WriteLine("1 - Write");
-        Console.WriteLine("2 - Display");
-        Console.WriteLine("3 - Delete entries");
-        Console.WriteLine("4 - End");
-        choice = Console.ReadKey().KeyChar;
-        Console.WriteLine();
-        // Selecting an option
-        switch (choice)
+    {
+        // Create a list of YouTube videos
+        List<YouTubeVideo> videos = new List<YouTubeVideo>();
+
+        // Create the first video
+        YouTubeVideo video1 = new YouTubeVideo();
+        video1.Title = "Video 1";
+        video1.Author = "Author 1";
+        video1.Length = 120;
+        video1.AddComment("Commenter 1", "This is the first comment.");
+        video1.AddComment("Commenter 2", "This is the second comment.");
+        video1.AddComment("Commenter 3", "This is the third comment.");
+        videos.Add(video1);
+
+        // Create the second video
+        YouTubeVideo video2 = new YouTubeVideo();
+        video2.Title = "Video 2";
+        video2.Author = "Author 2";
+        video2.Length = 180;
+        video2.AddComment("Commenter 1", "This is the first comment.");
+        video2.AddComment("Commenter 2", "This is the second comment.");
+        videos.Add(video2);
+
+        // Create the third video
+        YouTubeVideo video3 = new YouTubeVideo();
+        video3.Title = "Video 3";
+        video3.Author = "Author 3";
+        video3.Length = 240;
+        video3.AddComment("Commenter 1", "This is the first comment.");
+        video3.AddComment("Commenter 2", "This is the second comment.");
+        video3.AddComment("Commenter 3", "This is the third comment.");
+        video3.AddComment("Commenter 4", "This is the fourth comment.");
+        videos.Add(video3);
+
+        // Iterate through the list of videos and display their details and comments
+        foreach (YouTubeVideo video in videos)
         {
-            case '1':
-                diary.AddEntry();
-                break;
-            case '2':
-                diary.SearchEntries();
-                break;
-            case '3':
-                diary.DeleteEntries();
-                break;
-            case '4':
-                Console.WriteLine("Press any key to quit the program...");
-                break;
-            default:
-                Console.WriteLine("Error. Press any key to choose another action.");
-                break;
+            video.DisplayDetails();
         }
-        Console.ReadKey();
     }
 }
